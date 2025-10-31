@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BourgeoisAI.IO Home</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #0f172a;
+    color: white;
+    min-height: 100vh;
+  }
+  .container {
+    max-width: 112rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  header {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header a.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #22d3ee, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+  }
+  header .buttons a {
+    margin-left: 1rem;
+    background-color: #22d3ee;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+  }
+  section.hero {
+    text-align: center;
+    padding: 5rem 0;
+  }
+  section.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #22d3ee, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+  }
+  section.hero p {
+    color: #d1d5db;
+    max-width: 48rem;
+    margin: 0 auto;
+    font-size: 1.125rem;
+  }
+  section.hero .actions {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  section.hero .actions a {
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    color: white;
+    background-color: #22d3ee;
+  }
+  section.hero .actions a.outline {
+    background-color: transparent;
+    border: 2px solid #22d3ee;
+    color: white;
+  }
+  section.video-section {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  section.video-section h2 {
+    margin-bottom: 1rem;
+  }
+  section.masterclass {
+    margin-bottom: 6rem;
+    text-align: center;
+  }
+  section.masterclass h2 {
+    color: #22d3ee;
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  section.masterclass .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  section.masterclass .card {
+    background-color: #0f172a;
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+  }
+  section.masterclass .card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  section.masterclass .card p {
+    color: #94a3b8;
+    font-size: 1rem;
+  }
+  section.consulting {
+    margin-bottom: 8rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  section.consulting .card {
+    background-color: #0f172a;
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    padding: 2.5rem;
+    max-width: 48rem;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+  }
+  section.consulting .card h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  section.consulting .card p {
+    color: #d1d5db;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  label {
+    font-weight: 700;
+  }
+  input, textarea {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    border: none;
+    font-size: 1rem;
+  }
+  input[type="submit"] {
+    background-color: #22d3ee;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+  }
+  #schedule-button {
+    background-color: #22d3ee;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    margin-top: 1rem;
+  }
+  footer {
+    text-align: center;
+    padding: 3rem 0;
+    border-top: 1px solid #1e293b;
+    color: #94a3b8;
+    font-size: 0.875rem;
+  }
+  footer .logo-text {
+    font-size: 1.125rem;
+    font-weight: 500;
+    background: linear-gradient(to right, #22d3ee, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+  }
+  footer a.linkedin-link {
+    color: #22d3ee;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  footer a.linkedin-link:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+<main>
+  <div class="container">
+    <header>
+      <a href="/" class="logo">BourgeoisAI.IO</a>
+      <div class="buttons">
+        <a href="/video" class="sm">🎓 Masterclass</a>
+      </div>
+    </header>
+    <section class="hero">
+      <h1>Learn AI. Automate Smart. Scale Fast.</h1>
+      <p>Join our masterclass or book a strategy session to transform your workflow with AI.</p>
+      <div class="actions">
+        <a href="/video">🎓 Start Free Preview</a>
+        <a href="#consulting" class="outline">📞 Book Consulting</a>
+      </div>
+    </section>
+    <section class="video-section">
+      <h2>Watch Our Introduction</h2>
+      <iframe width="560" height="315"
+        src="https://www.youtube-nocookie.com/embed/aeCVpoAI7-4"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </section>
+    <section class="masterclass">
+      <h2>Masterclass Outcomes</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Prompting Mastery</h3>
+          <p>Learn the CRAFT framework for high-impact AI prompts.</p>
+        </div>
+        <div class="card">
+          <h3>SQL & Data Automation</h3>
+          <p>Generate queries and dashboards in minutes.</p>
+        </div>
+        <div class="card">
+          <h3>Kaizen Scaling</h3>
+          <p>Apply small daily upgrades for long-term growth.</p>
+        </div>
+      </div>
+    </section>
+    <section id="consulting" class="consulting">
+      <div class="card">
+        <h2>Need AI Done-For-You?</h2>
+        <p>We offer tailored automation, data strategy, and AI integration for businesses. Book a call to get started.</p>
+        <form action="mailto:bourgeoisaisupport@proton.me" method="POST" enctype="text/plain">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="Name" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email" required />
+          <label for="message">Message</label>
+          <textarea id="message" name="Message" rows="4" required></textarea>
+          <input type="submit" value="Send Message" />
+        </form>
+        <button id="schedule-button" onclick="window.open('https://calendly.com/thomas-bourgeoisai/new-meeting', '_blank')">
+          📅 Schedule Strategy Call
+        </button>
+        <button style="margin-top: 1rem;">
+          <a href="https://gum.new/gum/cmhea7svt001104ju7d2p1syw" target="_blank" style="color: #22d3ee; text-decoration: none; font-weight: 600;">🛒 Get AI Fundamentals Masterclass</a>
+        </button>
+      </div>
+    </section>
+    <footer>
+      <p class="logo-text">BourgeoisAI.io</p>
+      <p>© 2025 BourgeoisAI. All rights reserved.</p>
+      <p>
+        <a
+          href="https://www.linkedin.com/in/thomas-bourgeois-7933491a2"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="linkedin-link"
+          >Connect with me on LinkedIn</a
+        >
+      </p>
+    </footer>
+  </div>
+</main>
+</body>
+</html>
